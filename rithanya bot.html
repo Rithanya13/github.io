@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>💬 Rithanya AI Assistant</title>
+
+<style>
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #ffe6f2, #ffcce0, #fff0f6);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #4b004b;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 0 8px #ff9edb;
+  }
+
+  .chat-container {
+    width: 90%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 500px;
+  }
+
+  #chatbox {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .message {
+    margin: 8px 0;
+    padding: 10px 14px;
+    border-radius: 18px;
+    max-width: 80%;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .user {
+    background: #ff69b4;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+  }
+
+  .bot {
+    background: #ffe6f2;
+    color: #4b004b;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .input-container {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  input {
+    flex-grow: 1;
+    border: 2px solid #ffb6c1;
+    border-radius: 20px;
+    padding: 10px 14px;
+    font-family: inherit;
+    outline: none;
+  }
+
+  button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  button:hover {
+    background: #ff85c3;
+    transform: translateY(-1px);
+  }
+
+  .typing {
+    font-style: italic;
+    color: #ff69b4;
+    font-size: 14px;
+    margin: 4px 0 0 4px;
+  }
+</style>
+</head>
+
+<body>
+  <h1>💗 RithanyaBot</h1>
+  <div class="chat-container">
+    <div id="chatbox"></div>
+    <div id="typing" class="typing" style="display: none;">RithanyaBot is typing...</div>
+
+    <div class="input-container">
+      <input id="userInput" placeholder="Ask me about Rithanya..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+<script>
+const chatbox = document.getElementById("chatbox");
+const typing = document.getElementById("typing");
+
+const replies = {
+  hi: "Hi there! I'm Rithanya’s AI assistant 💗 How can I help you today?",
+  about: "Rithanya is a Software Engineer turned Data Scientist pursuing her MSBA at Suffolk University 🎓",
+  projects: "She’s worked on projects like BlueBikes Analytics, Churn Prediction, and a Resume Optimizer using ML & GenAI 📊",
+  skills: "Her skills include Python, SQL, Tableau, Machine Learning, and Cloud tools like AWS ☁️",
+  contact: "You can reach her at rithanya.chandran@su.suffolk.edu 💌",
+  hobbies: "She loves design, data storytelling, and good coffee ☕",
+  bye: "Goodbye! Keep shining bright like data ✨"
+};
+
+function appendMessage(sender, text, className) {
+  const msg = document.createElement("div");
+  msg.classList.add("message", className);
+  msg.textContent = text;
+  chatbox.appendChild(msg);
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function botReply(message) {
+  let reply = "I'm still learning 💫 Try asking about 'projects' or 'skills'.";
+  const lowerMsg = message.toLowerCase();
+  for (const key in replies) {
+    if (lowerMsg.includes(key)) reply = replies[key];
+  }
+
+  typing.style.display = "block";
+  setTimeout(() => {
+    typing.style.display = "none";
+    appendMessage("bot", reply, "bot");
+  }, 1000);
+}
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim();
+  if (!message) return;
+  appendMessage("user", message, "user");
+  input.value = "";
+  botReply(message);
+}
+</script>
+</body>
+</html>
