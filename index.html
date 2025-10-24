@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rithanya Chandran · Data Scientist</title>
+  <meta name="description" content="Portfolio of Rithanya Chandran — Software Engineer turned Data Scientist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink-900:#B83280;
+      --pink-700:#DB4CA0;
+      --pink-600:#FF69B4;    /* main accent */
+      --pink-200:#FFD1DC;    /* light background accents */
+      --pink-50:#FFF5F8;     /* page background */
+      --ink:#2b2b2b;
+      --ink-soft:#4e4e4e;
+      --card:#ffffff;
+      --gold:#F9D77E;
+      --radius:22px;
+      --shadow:0 10px 30px rgba(255,105,180,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #ffe3ef 0%, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #ffe9f2 0%, transparent 60%),
+        var(--pink-50);
+      line-height:1.6;
+    }
+    a{color:var(--pink-700);text-decoration:none}
+    a:hover{color:var(--pink-900)}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    /* Nav */
+    .nav{
+      position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(255,245,248,.7);border-bottom:1px solid #f5cfe0;z-index:10
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:.4px}
+    .brand span{color:var(--pink-600)}
+    .nav a{margin-left:16px;font-weight:600}
+    /* Hero */
+    .hero{padding:80px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .badge{display:inline-block;background:var(--pink-200);color:var(--pink-900);padding:6px 12px;border-radius:999px;font-weight:600}
+    h1{font-family:"Playfair Display",serif;font-size:48px;line-height:1.15;margin:14px 0 12px}
+    .lead{color:var(--ink-soft);font-size:18px}
+    .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;border:2px solid transparent;
+      font-weight:700;box-shadow:var(--shadow);transition:.2s;
+    }
+    .btn-primary{background:var(--pink-600);color:#fff}
+    .btn-primary:hover{transform:translateY(-1px);background:var(--pink-700)}
+    .btn-ghost{background:#fff;border-color:var(--pink-200);color:var(--pink-700)}
+    .btn-ghost:hover{border-color:var(--pink-600);color:var(--pink-900)}
+    .card{
+      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px
+    }
+    .hero .card{aspect-ratio:4/3;display:grid;place-items:center;
+      background:linear-gradient(135deg,#fff, #ffe8f3 40%, #ffd6ea 100%);
+      border:1px solid #ffd6ea
+    }
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{font-size:28px;margin:0 0 16px}
+    .grid{
+      display:grid;gap:18px
+    }
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #ffd6ea;color:var(--pink-900);font-size:12px;font-weight:700}
+    .proj-card h3{margin:4px 0 8px}
+    /* Skills */
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{background:#fff;border:1px solid #ffd6ea;border-radius:999px;padding:8px 12px;font-weight:600}
+    /* Footer */
+    footer{padding:36px 0 60px;color:#6b6b6b;text-align:center}
+    .gold{color:#7a5b00;background:linear-gradient(90deg,#f6d365,#fda085);-webkit-background-clip:text;background-clip:text;color:transparent}
+    /* Responsive */
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:16px}
+      h1{font-size:40px}
+      .grid-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Rithanya<span>.ai</span></div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="container hero">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">Software Engineer → Data Scientist</span>
+        <h1>Turning data into <span class="gold">elegant insights</span>.</h1>
+        <p class="lead">
+          MSBA @ Suffolk University. I build analytics, ML, and GenAI projects with Python, SQL, and AWS.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">View my work</a>
+          <a class="btn btn-ghost" href="Rithanya_Chandran_Resume.pdf">Download résumé</a>
+        </div>
+      </div>
+      <div class="card" aria-hidden="true">
+        <!-- Replace with your photo later -->
+        <div style="text-align:center">
+          <div style="font-size:52px">📊✨</div>
+          <div style="font-weight:700;color:var(--pink-700)">Rithanya Data Universe</div>
+          <div style="color:#8a6e7a">Beautiful, rigorous, useful.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container">
+    <h2 class="section-title">Featured projects</h2>
+    <div class="grid grid-3">
+      <article class="card proj-card">
+        <span class="tag">Tableau</span>
+        <h3>BlueBikes Boston Analytics</h3>
+        <p>Exploring ride patterns, peak hours, and station flows; built interactive dashboards and insights.</p>
+      </article>
+      <article class="card proj-card">
+        <span class="tag">Python • ML</span>
+        <h3>Churn Prediction</h3>
+        <p>End-to-end pipeline with Pandas, scikit-learn, and feature importance for explainability.</p>
+      </article>
+      <article class="card proj-card">
+        <span class="tag">GenAI</span>
+        <h3>Resume Optimizer</h3>
+        <p>LLM-assisted keyword matching and tailored suggestions for DS roles; deployable as a Streamlit app.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="container">
+    <h2 class="section-title">Skills & tools</h2>
+    <div class="chips">
+      <span class="chip">Python</span>
+      <span class="chip">Pandas</span>
+      <span class="chip">scikit-learn</span>
+      <span class="chip">SQL</span>
+      <span class="chip">Tableau</span>
+      <span class="chip">AWS</span>
+      <span class="chip">Git</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Let’s connect</h2>
+    <p>Email: <a href="mailto:rithanya.chandran@su.suffolk.edu">rithanya.chandran@su.suffolk.edu</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/">/in/rithanya-chandran</a> · GitHub: <a href="https://github.com/">@rithanya</a></p>
+  </section>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Rithanya Chandran — Crafted with HTML/CSS. Pink power 💗
+  </footer>
+</body>
+</html>
